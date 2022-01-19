@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://nikolasburk:nikolasburk@localhost:5432/generated-columns"
+}
+
+model User {
+  id        Int     @id @default(autoincrement())
+  firstName String?
+  lastName  String?
+  fullName  String? // GENERATED
+}
